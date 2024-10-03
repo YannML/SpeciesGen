@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--CSS padrao -->
+    <link rel="stylesheet" type="text/css" href="style.css"/>  
+</head>
+<body>
+
+<div class="container wrapper">
+
+  <!-- Menu fixo no topo -->
+  <nav>
+    <!-- Imagem alinhada à esquerda -->
+    <!-- Itens do menu alinhados à direita -->
+    <ul class="menu-right">
+      <li data-section="Model"><a>Model</a>
+        <ul>
+          <li data-section="Install"><a>Install</a></li>
+          <li data-section="Guide"><a>Guide</a></li>
+        </ul>
+      </li>
+      <li data-section="Parameters"><a>Parameters</a>
+        <ul>
+          <li data-section="Time"><a>Time</a></li>
+          <li data-section="Sample"><a>Sample</a></li>
+          <li data-section="Envirommnet"><a>Envirommnet</a></li>
+          <li data-section="Specie"><a>Specie</a></li>
+          <li data-section="Dynamics"><a>Dynamics</a></li>
+          <li data-section="Randomness"><a>Randomness</a></li>
+        </ul>
+      </li>
+      <li data-section="Simulation"><a>Simulation</a>
+        <ul>
+          <li data-section="SetParameters"><a>Set Parameters</a></li>
+          <li><a>Start Simulation</a></li>
+        </ul>
+      </li>
+      <li data-section="Graphics"><a>Graphics</a>
+        <ul>
+          <li><a>Generate Graphs</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="wrapper">
+        <!--Conteudo-->
+        <div id="main">
+          <!--Model-->
+          <div id="Model" class="section active">
+            <img id="Logotipo" src="./Logotipo.png"/>
+              
+              <p>This project uses a model based on the premise developed by Penna, where bit strings represent individuals' aging. 
+                The work is an update of the model by Keesen et al, introducing the simulation of fragmented areas, mimicking real habitat divisions.
+              </p>
+              <p>
+                Developed in C++ using object-oriented programming, the focus is on creating an accurate representation of virtual individuals. 
+                These individuals age, reproduce, and die as they interact with the fragmented environment, exploring the ecological challenges of survival and migration between different areas.
+              </p>
+              <p>
+                The combination of simulated aging with habitat fragmentation makes this model a powerful tool for understanding the effects of genetics and the environment on population dynamics.
+              </p>
+              
+            </div>
+          <div id="Install" class="section">
+              <h2>Installation</h2>
+              <p>
+
+              </p>
+          </div>
+          <div id="Guide" class="section">
+              <h2>How to use the tool?</h2>
+              <p>
+
+              </p>
+          </div>
+          
+          <!--Parameters-->
+          <div id="Parameters" class="section">
+              <h2>Simulation Parameters Configuration</h2>
+              <p>
+                In this section, you can adjust the key parameters that control the population simulation. 
+                These parameters define essential aspects of population dynamics, such as the behavior of aging, reproduction, and individual interactions with the environment. 
+                By adjusting these values, you can explore different scenarios and observe how genetic, ecological, and spatial factors influence the evolution and survival of a population over time.
+              </p>
+              <p>
+                The flexibility offered by this configuration allows you to simulate anything from small populations in stable environments to large, fragmented ecosystems with complex challenges of migration and limited resources. 
+                The parameters set here are crucial to customizing the model according to the needs of the study or experiment you wish to conduct.
+              </p>
+              <p>
+                Once you’ve adjusted the desired parameters, simply run the model and observe the results based on the conditions you’ve configured.
+              </p>
+              <img class="NextPage" src="./icons/next.png"/>
+              
+          </div>
+
+          <div id="Time" class="section">
+            <h2>Time Configuration</h2>
+            <p>
+              In this section, you can adjust the time parameters that control the duration and time unit used (days, months, years) of the population simulation. 
+              Accurate time configuration is essential to ensure that the model simulates population events precisely over different temporal scales. 
+              By adjusting these values, you can explore how population dynamics develop over short or long periods, providing detailed insights into the population's behavior over time.
+            </p>
+            <p>
+              keeping in mind that increasing the number of times steps extend processing time.
+            </p>
+            
+            <h4>Time Unit:</h4>
+            <label class="radio-inline">
+              <input type="radio" name="TimeUnit">Seconds
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="TimeUnit">Minutes
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="TimeUnit">Hours
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="TimeUnit">Days
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="TimeUnit">Months
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="TimeUnit" checked>Years
+            </label>
+            
+            <h4>Time Steps:</h4>
+            <input type="number" id="TimeSteps" name="quantity" min="1" value="800000">
+            <div class="groupInlineElements">
+              <button type="button">Save</button>
+            </div>
+            
+            
+            <img class="NextPage" src="./icons/next.png"/>
+            
+          </div>
+
+          <div id="Sample" class="section">
+            <h2>Sampling Configuration</h2>
+            <p>
+              In this section, you can adjust both the number of samples and the number of datasets that the model will generate during the simulation. 
+              The number of samples determines how many times the model will run for each dataset, while the number of datasets defines the number of sample sets generated, 
+              allowing for the calculation of the standard deviation for each set.
+            </p>
+            <p>
+              For example, by setting 50 samples and 10 datasets, the model will run 50 times for each dataset, generating 10 sample sets. 
+              This setup facilitates statistical analysis of the results, providing a more accurate view of data variability.
+            </p>
+            <p>
+              Adjust these parameters according to the desired level of detail, keeping in mind that increasing the number of samples and datasets extend processing time.
+            </p>
+
+            <label class="SideH4">Datasets:</label>
+            <input type="number" id="Datasets" name="datasets" min="1" value="10">
+
+            <label class="SideH4">Samples:</label>
+            <input type="number" id="Samples" name="samples" min="1" value="50">
+
+            <div class="groupInlineElements">
+              <button type="button">Save</button>
+            </div>
+
+            <img class="NextPage" src="./icons/next.png"/>
+            
+          </div>
+
+          <div id="Envirommnet" class="section">
+            <h2>Environment Configuration</h2>
+            <p>
+              In this section, you can define the characteristics of the environment that will influence the model simulation. 
+              The parameters you set here are essential for determining the habitat structure and population dynamics.
+            </p>
+            <p>
+              <h4 class="SideH4">Fragments and Area:</h4> 
+              You can adjust the number of fragments that make up the environment, as well as specify the total area available for the simulation. 
+              Configuring the area and the number of fragments will have a direct impact on how populations interact and distribute.
+            </p>
+            <p>
+              <h4 class="SideH4">Perimeter and Shape:</h4>
+              It is possible to define the perimeter and shape of each fragment. 
+              These parameters are crucial, as areas with different shapes and boundaries can influence species accessibility and survival.
+            </p>
+            <p>
+              <h4 class="SideH4">Initial Population Density:</h4>
+              The initial population density is another vital aspect, as it determines how many individuals will start the simulation. 
+              This value can be adjusted based on the ecological characteristics of the environment.
+            </p>
+            <p>
+              <h4 class="SideH4">Fragmentation:</h4>
+               You will also have the option to decide whether the area will be fragmented. If you choose to fragment, you can specify how many parts the area will 
+              be divided into and at which time step this fragmentation will occur. 
+              This fragmentation dynamic is fundamental for simulating realistic ecological scenarios, where habitats may be altered by natural or anthropogenic processes.
+            </p>
+            <p>
+              <h4 class="SideH4">Connectivity:</h4>
+              allows for the migration of individuals between different areas. You can specify the degree of connectivity, 
+              influencing how easily individuals can move and disperse throughout the habitat. 
+              This factor is essential for understanding population dynamics, gene flow, and the overall resilience of species in fragmented landscapes.
+            </p>
+            <p>
+              Configuring these parameters will allow for a more accurate and representative simulation of environmental conditions, 
+              enabling a detailed analysis of population interactions, the effects of fragmentation, and the role of connectivity in migration processes.
+            </p>
+            <form id="itemForm">
+              <div class="groupInlineElements">
+                <h3>Fragment Parameters</h3>
+                <label class="SideH4">Name:</label>
+                <input type="text" id="itemInput" placeholder="(A, B, C ...)" required>
+              </div>
+
+              <div class="groupInlineElements">
+                <label class="SideH4">Area:</label>
+                <input type="number" id="FragmentsArea" name="fragmentsarea" min="1" value="1" step="0.001">
+                
+                <label class="SideH4">Perimeter:</label>
+                <input type="number" id="FragmentsPerimeter" name="fragmentsperimeter" min="1" value="1" step="0.001">
+              </div>
+
+                <label class="SideH4">Shape:</label>
+                <input type="checkbox" id="divideCheckbox" name="FragmentShape" checked />
+                <label for="FragmentShape">Circular</label>
+
+                <div class="groupInlineElements">
+                  <label class="SideH4">Initial Density:</label>
+                  <input id="initialDensity_input" type="range" min="0" max="1" step="0.01" />
+                  <label>Value: <output id="initialDensityValue"></output></label>
+                </div>
+                
+                <div class="groupInlineElements">
+                  <label class="SideH4">Fragmentation?</label>
+                  <input type="checkbox" id="Fragmentation" name="Fragmentation" />
+                  <label for="Fragmentation">Yes</label>
+                </div>
+
+                <div id="FragmentationParameters" class="groupInlineElements invisible">
+                  <label class="SideH4">Number of Divisions:</label>
+                  <input type="number" id="divisionInput" name="divisionInput" min="0" value="0" step="1">
+                  <br>
+                  <label class="SideH4">When will fragmentation occur?</label>
+                  <label>At the:</label>
+                  <input type="number" id="FragmentsArea" name="fragmentsarea" min="0" value="0" step="1">
+                  <label>Time Step</label>
+                </div>
+                  
+                  <div class="groupInlineElements">
+                    <button onclick="">Add Fragment</button>
+                    <button onclick="">Remove Fragment</button>
+                  </div>
+            </form>
+
+              <h3>Fragments Added</h3>
+              <table id="itemTable">
+                <thead>
+                    <tr>
+                        <th>Itens</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+
+              <h3>Connectivity</h3>
+              <div id="matrix"></div>
+              <input type="color" id="colorPicker">
+              <h3>Environment`s Graphical Representation</h3>
+              <label onclick="ShowInstructions()" style="font-size: small;">
+                How to adjust the objects below ?
+              </label>
+              <div id="Instructions">
+                <h3>Instructions:</h3>
+                <p>
+                  <h4>Circle Movement:</h4> Hold down the left mouse button to drag and move the circles.
+                </p>
+                <p>
+                  <h4>Color Change:</h4> Double-click on a circle to choose a new color for it.
+                </p>
+                <p>
+                  <h4>Image Download:</h4> Right-click anywhere on the canvas to download the current image.
+                </p>
+              </div>
+
+              <canvas id="canvas"></canvas>
+
+              <div class="groupInlineElements">
+                <label class="SideH4">Template Name:</label>
+                <input type="text" id="EnvirommnetName" name="envirommnetname" placeholder="Yellowstone National Park">
+                <button type="button">Save Template</button>
+              </div>
+            
+            <img class="NextPage" src="./icons/next.png"/>
+        </div>
+
+                    
+          
+          <div id="Specie" class="section">
+            <h2>Species Configuration</h2>
+            <p>
+              This section defines the characteristics of the species in the model. The parameters provided below help simulate species-specific behaviors and life cycles.
+            </p>
+            <p>
+              The species section includes parameters such as Name and Longevity, determining the species' lifespan in the simulation.
+              In the Distribution section, you can set the Density, defining the number of individuals per square kilometer. 
+              Additionally, you can configure whether the species exhibits gregarious behavior, organizing into groups, and set the maximum group size.
+            </p>
+            <p>
+              For Reproduction, parameters include the Maturity Age, when individuals become reproductively active, and the Reproductive Success, which affects the likelihood of successful reproduction. 
+              You can also define whether the species reproduces sexually or asexually, as well as the average number of offspring per reproductive event.
+            </p>
+            <p>
+              The Social Hierarchy section allows you to specify if the species has an alpha individual, 
+              the duration of the alpha's reign, and the alpha's reproductive success rate.
+              In the Parental Behavior section, you can indicate whether the species provides parental care to their offspring and the duration of this care.
+            </p>
+            
+            <h3>Specie Parameters</h3>
+            <div class="groupInlineElements">
+              <label>Name:</label>
+              <input type="text" id="itemInput" placeholder="Sapajus Robustus" style="font-style: italic;" required>
+              <label>Longevity:</label>
+              <input type="number" id="Longevity" name="Longevity" min="0" value="0" step="1">
+            </div>
+            
+            <h3>Distribution</h3>
+            <div class="groupInlineElements">
+              <label>Density:</label>
+              <input type="number" id="Density" name="Density" min="0" value="0" step="0.001">    
+            </div>
+            <div class="groupInlineElements">
+              <label>Gregarious Behavior:</label>
+              <input type="checkbox" id="GregariousBehavior" name="GregariousBehavior" />
+              <label for="GregariousBehavior">Yes</label>
+            </div>
+            <div id="GregariousBehaviorParameters" class="groupInlineElements invisible">
+              <label>Maximum Group Size:</label>
+              <input type="number" id="MaximumGroupSize" name="MaximumGroupSize" min="2" value="2" step="1">
+            </div>
+
+            <h3>Reproduction</h3>
+            <div class="groupInlineElements">
+              <label>Maturity Age:</label>
+              <input type="number" id="MaturityAge" name="MaturityAge" min="1" value="1" step="1">    
+            </div>
+            <div class="groupInlineElements">
+              <label>Reproductive Strategy:</label>
+              <input type="checkbox" id="ReproductiveStrategy" name="ReproductiveStrategy" />
+              <label for="ReproductiveStrategy">Sexual</label>
+              <input type="checkbox" id="ReproductiveStrategy" name="ReproductiveStrategy" />
+              <label for="ReproductiveStrategy">Asexual</label>
+            </div>
+            <div class="groupInlineElements">
+              <label>Reproductive Success:</label>
+              <input type="number" id="ReproductiveSuccess" name="ReproductiveSuccess" min="0" max="1" value="0" step="0.01">
+            </div>
+            <div class="groupInlineElements">
+              <label>Litter or Clucth Size:</label>
+              <input type="number" id="LitterOrClucthSize:" name="LitterOrClucthSize" min="1" value="1" step="1">
+            </div>
+
+            <h3>Social Hierarchy<input type="checkbox" id="SocialHierarchy" name="SocialHierarchy" /></h3>
+            <div id="SocialHierarchyParameters" class="invisible">
+              <div class="groupInlineElements">
+                <label>Alpha Reproductive Success:</label>
+                <input type="number" id="AlphaReproductiveSuccess" name="AlphaReproductiveSuccess" min="0" max="1" value="0" step="0.01">
+              </div>
+              <div class="groupInlineElements">
+                <label>Alpha Tenure:</label>
+                <input type="number" id="AlphaTenure:" name="AlphaTenure" min="1" value="1" step="1">
+              </div>
+            </div>
+           
+            <h3>Parental Behavior<input type="checkbox" id="ParentalBehavior" name="ParentalBehavior" /></h3>
+              <div id="ParentalBehaviorParameters" class="groupInlineElements invisible">
+                <label>Duration:</label>
+                <input type="number" id="ParentalCareDuration:" name="ParentalCareDuration" min="1" value="1" step="1">
+              </div>
+
+              <button type="button">Save</button>
+            
+            <img class="NextPage" src="./icons/next.png"/>
+          </div>
+
+          <div id="Dynamics" class="section">
+            <h2>Dynamics configuration</h2>
+            <p>
+              On this section, you can adjust various parameters related to population dynamics.
+              The Verhulst Model is incorporated to control population growth by applying a bias to soften the logistic growth effect.
+              The Movement Dynamic allows you to configure how populations move and spread, defining the age at which individuals disperse, 
+              the rate of dispersion, and which gender is responsible for dispersing. 
+            </p>
+            <p>
+              The evolutionary aspect is modeled using the Penna Model, where you can simulate genetic evolution by adjusting parameters such as the mutation rate limit, the size of the genetic string, 
+              the number of dominant positions, and penalties for consanguineous reproduction.
+            </p>
+
+            <h3>Population Growth</h3>
+            <div class="groupInlineElements">
+              <label class="SideH4">Bias:</label>
+              <input id="Bias_input" type="range" min="0" max="1" step="0.01" />
+              <label>Value: <output id="BiasValue"></output></label>
+              <div class="groupInlineElements">
+                <label class="SideH4">Template Name:</label>
+                <input type="text" id="EnvirommnetName" name="envirommnetname" placeholder="Population Growth A">
+                <button type="button">Save Template</button>
+              </div>
+            </div>
+            <h3>Movement</h3>
+            <h4>Dispersal</h4>
+            <div class="groupInlineElements">
+              <label>Who disperse?</label>
+              <input type="checkbox" id="DisperseGender" name="DisperseGender" />
+              <label for="DisperseGender">Male</label>
+              <input type="checkbox" id="DisperseGender" name="DisperseGender" />
+              <label for="DisperseGender">Female</label>
+            </div>
+            <div class="groupInlineElements">
+              <label>Disperse Age:</label>
+              <input type="number" id="DisperseAge" name="DisperseAge" min="1" value="1" step="1">    
+            </div>
+            <div class="groupInlineElements">
+              <label class="SideH4">Rate:</label>
+              <input id="Rate_input" type="range" min="0" max="1" step="0.01" />
+              <label>Value: <output id="RateValue"></output></label>
+            </div>
+
+            <div class="groupInlineElements">
+              <label class="SideH4">Template Name:</label>
+              <input type="text" id="EnvirommnetName" name="envirommnetname" placeholder="Dispersal Dynamic A">
+              <button type="button">Save Template</button>
+            </div>
+            <h4>Migration</h4>
+            <p>Comming soon...</p>
+
+            <h3>Evolutionary</h3>
+            <div class="groupInlineElements">
+              <label>Mutation Treshold:</label>
+              <input type="number" id="MutationTreshold" name="MutationTreshold" min="1" value="1" step="1">    
+            </div>
+            <div class="groupInlineElements">
+              <label>Number of dominant positions:</label>
+              <input type="number" id="DominantPositions" name="DominantPositions" min="1" value="1" step="1">    
+            </div>
+            <div class="groupInlineElements">
+              <label>Number of mutations for new individuals based on the degree of kinship:</label>
+              <br><br>
+            </div>
+            <div class="groupInlineElements">
+              <label>Non-existent:</label>
+              <input type="number" id="DisperseAge" name="DisperseAge" min="1" value="1" step="1">    
+            </div>
+            <div class="groupInlineElements">
+              <label>Distant:</label>
+              <input type="number" id="DisperseAge" name="DisperseAge" min="1" value="1" step="1">    
+            </div>
+            <div class="groupInlineElements">
+              <label>Close:</label>
+              <input type="number" id="DisperseAge" name="DisperseAge" min="1" value="1" step="1">    
+            </div>
+
+            <div class="groupInlineElements">
+              <label class="SideH4">Template Name:</label>
+              <input type="text" id="EnvirommnetName" name="envirommnetname" placeholder="Evolutionary dynamic A">
+              <button type="button">Save Template</button>
+            </div>
+
+            <img class="NextPage" src="./icons/next.png"/>
+          </div>
+
+          <div id="Randomness" class="section">
+            <h2>Seção 2</h2>
+            <p>Conteúdo da Seção Randomness</p>
+          </div>
+
+          <!--Simulation-->
+          <div id="Simulation" class="section">
+            <h2>Simulation</h2>
+            <p>
+              In this section, you can run the population simulation using the pre-configured parameters. To begin, ensure that the desired parameters have been set in the Parameters section. 
+              These parameters determine the behavior and initial conditions of the simulation.
+            </p>
+            <p>
+              Once the parameters are selected, you can start the simulation, which will calculate the population dynamics based on the defined conditions. 
+              The simulation progress will be displayed on the screen, and the results can later be visualized and analyzed in the graphs section.
+            </p>
+            <img class="NextPage" src="./icons/next.png"/>
+          </div>
+          <div id="SetParameters" class="section">
+            <h2>Assign preconfigured parameters</h2>
+            <p>
+              
+            </p>
+            <img class="NextPage" src="./icons/start.png"/>
+          </div>
+
+          <!--Graphics-->
+          <div id="Graphics" class="section">
+              <h2>Graph Generation</h2>
+              <p>
+                In this section, you can visualize the results of the population simulation through detailed graphs. To begin, select the folder where the model’s output files are located. 
+                From this data, graphs will be generated to represent population dynamics over time, such as growth, aging, mortality rates, migration, and other key factors.
+              </p>
+              <p>
+                Once the folder is selected, the graphs will be automatically created based on the provided information, allowing for a visual analysis of the simulated scenarios. 
+                This makes it easier to understand emerging patterns and the behavior of the simulated population under different conditions.
+              </p>
+          </div>
+
+        </div> 
+        <!--End Conteudo-->      
+  </div>
+</div>
+<!--Script-->
+<script src="script.js"></script> 
+</body>
+</html>

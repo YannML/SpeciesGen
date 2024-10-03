@@ -1,0 +1,282 @@
+:root{
+    --clr-black: #000;
+    --clr-almostBlack: #111;
+    --clr-tintedBlack: #222;
+    --clr-lightBlack: #333;
+    --clr-shadedGray: #666;
+    --clr-lightGray: #999;
+    --clr-darkWhite:#ccc;
+    --clr-almostWhite: #eee;
+    --clr-white: #fff;
+
+    --clr-beige: #fff5d7;
+    --clr-silver: #8e8e90;
+    --clr-icecold:#a0d2eb;
+    --clr-gray:#494d5f;
+    
+    --clr-red:#f45572;
+    --clr-green:#acf7c3;
+    --clr-blue:#77aaff;
+
+    --transparent1: rgba(255, 255, 255, 0.4);
+    --transparent2: rgba(255, 255, 255, 0.2);
+    --transparent3: rgba(20, 20, 20, 0.1);
+
+    --shadowHover: 0em 0.2em 1em 0.1em var(--clr-lightBlack);
+    --font-size:14px;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    font: 100% Lucida Sans, Verdana;
+    font-size: var(--font-size);
+    margin: 2px;
+    line-height: 26px;
+    /*background-image: radial-gradient(var(--clr-darkWhite) 10%, transparent 12%);*/
+    background-color: var(--clr-white);
+    background-size: 10px 10px;
+    overflow: hidden;
+}
+
+.wrapper {
+    position: relative;
+    overflow: auto;
+}
+
+.section {
+    display: none;
+}
+.active {
+    display: block;
+}
+
+ /* Menu fixo no topo */
+ nav {
+    position: fixed;
+    width: auto;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*background-color: var(--clr-white);*/
+    box-shadow:  0 1px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+  }
+
+  /* Estilo para o menu à direita */
+  .menu-right {
+    list-style-type: none;
+    padding: 10px;
+    display: flex;
+    margin-right: 20px;
+  }
+
+  .menu-right li {
+    position: relative;
+    margin-left: 20px;
+    text-transform: uppercase;
+  }
+
+  .menu-right li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: var(--clr-lightGray);
+  }
+
+  .menu-right li a:hover {
+    font-weight: bold;
+  }
+
+  /* Estilo do submenu */
+  .menu-right li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--clr-white);
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    box-shadow:  0 1px 5px rgba(0, 0, 0, 0.4);
+  }
+
+  .menu-right li ul li {
+    display: block;
+    text-align: left;
+    text-transform:none;
+  }
+
+  .menu-right li ul li a {
+    white-space: nowrap;
+  }
+
+  .menu-right li:hover ul {
+    display: block;
+  }
+
+#main {
+    margin-top: 105px; /* Ajuste para criar espaço para o topo e o submenu */
+    margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
+    overflow-y: auto; /* Permite a rolagem vertical */
+    height: calc(100vh - 105px - 20px); /* Altura da tela menos o topo e o padding */
+    padding: 10px; /* Ajuste o preenchimento conforme necessário */
+    box-sizing: border-box; /* Inclui o padding no cálculo da altura */
+    background-color: var(--clr-white);
+    border-radius: 5px;
+}
+
+#top h1, #top p, #submenu-container {
+    margin: 0;
+    padding: 0;
+}
+
+#submenu-container {
+    position: fixed; /* Fixa a div do submenu */
+    top: 40px; /* Ajuste a posição para que fique logo abaixo do topo */
+    left: 10px;
+    right: 10px;
+    width: auto;
+    z-index: 2; /* Certifique-se de que esteja acima da div principal */
+    padding: 10px; /* Ajuste o preenchimento conforme necessário */
+}
+
+.submenu-section {
+    display: none;
+    list-style-type: none;
+    background-color: var(--clr-almostWhite);
+    box-shadow: 0 1px 10px 1px var(--clr-lightGray);
+    border-radius: 5px;
+}
+
+.submenu-section.active {
+    display: flex;
+    justify-content: center;/*Elementos no centro da nav*/
+    align-items: center; /*Elementos no centro da nav(interior)*/
+}
+
+.submenu-section li{
+    padding: 10px;
+    color: var(--clr-tintedBlack);
+    display: inline-block;
+    cursor: pointer;
+}
+
+.submenu-section li:hover {
+    font-weight: bold;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+p
+{
+    text-align: justify;
+}
+
+#Instructions{
+  padding: 15px;
+  font-size: small;
+  box-shadow:  0 1px 8px rgba(0, 0, 0, 0.4);
+  width: 600px;
+  display: none;
+  border-radius: 5px;
+}
+
+#Logotipo{
+    height: 50%;
+    width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.NextPage{
+    cursor: pointer;
+    display: block;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 1.8em;
+    width: 1.8em;
+    transition: 0.8s;
+}
+.NextPage:hover{
+    height: 2.0em;
+    width: 2.0em;
+    transition: 0.8s;
+}
+
+.SideH4{
+    display: inline;
+    padding: 0px;
+}
+
+input {
+    font: 100% Lucida Sans, Verdana;
+    width: auto;
+    padding: 5px;
+    margin-bottom: 20px;
+    border: 2px solid var(--clr-lightGray);
+    border-radius: 10px;
+    text-align: center;
+  }
+.groupInlineElements{
+    display: block;
+}
+button{
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+button:hover {
+    background-color: #45a049;
+  }
+#matrix {
+    margin-top: 20px;
+}
+#canvas {
+    border: 1px solid #000;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: auto;
+    image-rendering: optimizeQuality;
+    border-radius: 5px;
+}
+#colorPicker {
+    position: absolute;
+    display: none;
+    width: 60px;
+    height: 30px;
+}
+table {
+    border-collapse: collapse;
+    margin: 20px 0;
+    width: 100%;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background-color: #f2f2f2;
+}
+
+.invisible{
+    display: none;
+}
